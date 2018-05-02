@@ -165,6 +165,8 @@ struct security_class_mapping secclass_map[] = {
 	  { COMMON_CAP_PERMS, NULL } },
 	{ "cap2_userns",
 	  { COMMON_CAP2_PERMS, NULL } },
+	{ "xdp_socket",
+	  { COMMON_SOCK_PERMS, NULL } },
 	{ "can_socket",
 	  { COMMON_SOCK_PERMS, NULL } },
 	{ "bpf",
