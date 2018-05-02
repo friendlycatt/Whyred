@@ -319,6 +319,14 @@
 					fsmgr_flags = "wait";
 					status = "ok";
 				};
+                                my_product {
+                                        compatible = "android,vendor";
+                                        dev = "/dev/block/platform/soc/c0c4000.sdhci/by-name/cust";
+                                        type = "ext4";
+                                        mnt_flags = "ro,barrier=1,discard";
+                                        fsmgr_flags = "wait";
+                                        status = "ok";
+                                };
 			};
 		};
 	};
