@@ -28,6 +28,7 @@ struct sock;
 struct seq_file;
 struct btf;
 struct btf_type;
+struct exception_table_entry;
 struct poll_table_struct;
 
 extern struct idr btf_idr;
@@ -426,6 +427,8 @@ struct bpf_prog_aux {
 	 * main prog always has linfo_idx == 0
 	 */
 	u32 linfo_idx;
+	u32 num_exentries;
+	struct exception_table_entry *extable;
 	struct bpf_prog_stats __percpu *stats;
 	u32 type_id; /* type id for this prog/func */
 	union {
