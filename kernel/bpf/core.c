@@ -1567,7 +1567,7 @@ load_word:
 		 *   BPF_R0 - 8/16/32-bit skb data converted to cpu endianness
 		 */
 
-		ptr = bpf_load_pointer((struct sk_buff *) (unsigned long) CTX, off, 4, &tmp);
+		ptr = bpf_load_pointer((struct sk_buff *) (unsigned long) CTX, off, 4, &AX);
 		if (likely(ptr != NULL)) {
 			BPF_R0 = get_unaligned_be32(ptr);
 			CONT;
@@ -1577,7 +1577,7 @@ load_word:
 	LD_ABS_H: /* BPF_R0 = ntohs(*(u16 *) (skb->data + imm32)) */
 		off = IMM;
 load_half:
-		ptr = bpf_load_pointer((struct sk_buff *) (unsigned long) CTX, off, 2, &tmp);
+		ptr = bpf_load_pointer((struct sk_buff *) (unsigned long) CTX, off, 2, &AX);
 		if (likely(ptr != NULL)) {
 			BPF_R0 = get_unaligned_be16(ptr);
 			CONT;
@@ -1587,7 +1587,7 @@ load_half:
 	LD_ABS_B: /* BPF_R0 = *(u8 *) (skb->data + imm32) */
 		off = IMM;
 load_byte:
-		ptr = bpf_load_pointer((struct sk_buff *) (unsigned long) CTX, off, 1, &tmp);
+		ptr = bpf_load_pointer((struct sk_buff *) (unsigned long) CTX, off, 1, &AX);
 		if (likely(ptr != NULL)) {
 			BPF_R0 = *(u8 *)ptr;
 			CONT;
