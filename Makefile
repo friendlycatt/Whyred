@@ -346,7 +346,6 @@ NM		= $(CROSS_COMPILE)nm
 STRIP		= $(CROSS_COMPILE)strip
 OBJCOPY		= $(CROSS_COMPILE)objcopy
 OBJDUMP		= $(CROSS_COMPILE)objdump
-endif
 PAHOLE		= pahole
 AWK		= awk
 GENKSYMS	= scripts/genksyms/genksyms
