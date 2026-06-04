@@ -1043,7 +1043,7 @@ next_dnode:
 
 			if (test_opt(sbi, LFS)) {
 				f2fs_put_dnode(&dn);
-				return -EOPNOTSUPP;
+				return -ENOTSUPP;
 			}
 
 			/* do not invalidate this block address */
