@@ -17,6 +17,10 @@ TS_ENABLE_FOPS(capacitive_keys)
 TS_ENABLE_FOPS(double_tap)
 TS_ENABLE_FOPS(reversed_keys)
 
+#ifdef CONFIG_PAPER_OPLUS_BACKLIGHT
+TS_ENABLE_FOPS(oplus_backlight)
+#endif
+
 static int __init tp_common_init(void)
 {
 	touchpanel_kobj = kobject_create_and_add("touchpanel", NULL);
