@@ -2866,10 +2866,7 @@ static inline bool is_dot_dotdot(const struct qstr *str)
 	return false;
 }
 
-<<<<<<< HEAD
-static inline bool f2fs_may_extent_tree(struct inode *inode)
-{
-	struc
+
 static inline void *f2fs_kmalloc(struct f2fs_sb_info *sbi,
 					size_t size, gfp_t flags)
 {
